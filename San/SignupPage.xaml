@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="San.SignupPage">
@@ -90,12 +89,18 @@
                                  HorizontalOptions="Center" 
                                  VerticalOptions="Center" 
                                  Spacing="15">
+                <Image Source="workerprofile.png" 
+                       HeightRequest="100" 
+                       WidthRequest="100" 
+                       HorizontalOptions="Center" 
+                       Aspect="AspectFill" />
+
                 <Image Source="signuplogo.png" 
                        HeightRequest="250" 
                        WidthRequest="250" 
                        HorizontalOptions="Center" />
 
-                     <Button Text="Sign Up" 
+                <Button Text="Sign Up" 
                         Clicked="OnSignupClicked"
                         BackgroundColor="Blue" 
                         TextColor="White" 
@@ -109,5 +114,14 @@
                        HorizontalTextAlignment="Center" />
             </VerticalStackLayout>
         </Grid>
+
+        <!-- Custom Error/Succes Alert View -->
+        <Frame x:Name="AlertFrame" IsVisible="False" BackgroundColor="White" Padding="20" CornerRadius="10" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Spacing="10">
+                <Label x:Name="AlertMessageLabel" TextColor="Black" FontSize="Medium" HorizontalOptions="Center"/>
+                <Button Text="OK" Clicked="OnAlertOkClicked" BackgroundColor="Blue" TextColor="White" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+
     </VerticalStackLayout>
 </ContentPage>

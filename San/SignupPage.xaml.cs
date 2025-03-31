@@ -23,28 +23,28 @@ namespace San
                 string.IsNullOrWhiteSpace(password) ||
                 string.IsNullOrWhiteSpace(confirmPassword))
             {
-                await DisplayAlert("Error", "All fields are required!", "OK");
+                ShowAlert("Error", "All fields are required!");
                 return;
             }
 
             // Validate email format using regex
             if (!IsValidEmail(email))
             {
-                await DisplayAlert("Error", "Enter a valid email address!", "OK");
+                ShowAlert("Error", "Enter a valid email address!");
                 return;
             }
 
             // Validate password strength
             if (password.Length < 6)
             {
-                await DisplayAlert("Error", "Password must be at least 6 characters long!", "OK");
+                ShowAlert("Error", "Password must be at least 6 characters long!");
                 return;
             }
 
             // Check if passwords match
             if (password != confirmPassword)
             {
-                await DisplayAlert("Error", "Passwords do not match!", "OK");
+                ShowAlert("Error", "Passwords do not match!");
                 return;
             }
 
@@ -53,10 +53,23 @@ namespace San
             Preferences.Set("userPassword", password);
 
             // Show success message
-            await DisplayAlert("Success", "Account created successfully!", "OK");
+            ShowAlert("Success", "Account created successfully!");
 
             // Navigate to Login Page
             await Navigation.PushAsync(new LoginPage());
+        }
+
+        // Show Custom Alert with message
+        private void ShowAlert(string title, string message)
+        {
+            AlertMessageLabel.Text = $"{title}: {message}";
+            AlertFrame.IsVisible = true;
+        }
+
+        // Handle OK button click on the custom alert
+        private void OnAlertOkClicked(object sender, EventArgs e)
+        {
+            AlertFrame.IsVisible = false;
         }
 
         // Email validation function

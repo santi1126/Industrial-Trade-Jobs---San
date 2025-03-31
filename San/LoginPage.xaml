@@ -2,13 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="San.LoginPage">
-    <VerticalStackLayout 
-        Padding="20" 
-        Spacing="10">
+    <VerticalStackLayout Padding="20" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout 
             HorizontalOptions="Center" 
             VerticalOptions="Start" 
-            Margin="0,20,0,40">
+            Margin="0,0,0,40">
             <Label 
                 Text="Industrial Trade Jobs" 
                 TextColor="Blue" 
@@ -29,93 +27,70 @@
                 FontAttributes="Bold"/>
         </StackLayout>
 
-        <Grid 
-            x:Name="LoginGrid"
-            ColumnDefinitions="*,*" 
-            Padding="10">
-
-            <VerticalStackLayout 
-                Grid.Column="0" 
-                Spacing="12">
-
-                <VerticalStackLayout>
-                    <Label 
-                        Text="Enter your email" 
-                        FontSize="Small" 
-                        FontAttributes="Bold"
-                        Padding="215,0,0,10"/>
-
-                    <Entry 
-                        x:Name="emailEntry" 
-                        Keyboard="Email" 
-                        HeightRequest="50" 
-                        WidthRequest="500"/>
-                </VerticalStackLayout>
-                <VerticalStackLayout>
-                    <Label 
-                        Text="Password" 
-                        FontSize="Small" 
-                        FontAttributes="Bold"
-                        Padding="215,0,0,10"/>
-                    <Entry 
-                        x:Name="passwordEntry" 
-                        IsPassword="True" 
-                        HeightRequest="50" 
-                        WidthRequest="500"/>
-                </VerticalStackLayout>
-                <Button 
-                    Text="Log in" 
-                    FontAttributes="Bold"
-                    Clicked="OnLoginClicked" 
-                    BackgroundColor="Blue" 
-                    TextColor="White" 
-                    HeightRequest="50" 
-                    WidthRequest="500"/>
+        <!-- Main content and form -->
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="15" Padding="10">
+            <!-- Email entry -->
+            <VerticalStackLayout>
                 <Label 
-                    Text="or continue with" 
-                    FontAttributes="Bold"
+                    Text="Enter your email" 
                     FontSize="Small" 
-                    HorizontalOptions="Center"/>
-                <Frame 
-                    BackgroundColor="Gray" 
-                    CornerRadius="5" 
+                    FontAttributes="Bold"
+                    Padding="0,0,0,10"/>
+                <Entry 
+                    x:Name="emailEntry" 
+                    Keyboard="Email" 
                     HeightRequest="50" 
-                    WidthRequest="500">
-                    <HorizontalStackLayout 
-                        Padding="5" 
-                        Spacing="10" 
-                        VerticalOptions="Center" 
-                        HorizontalOptions="Center">
-                        <Image 
-                            Source="googlelogo.png" 
-                            WidthRequest="25" 
-                            HeightRequest="25" 
-                            VerticalOptions="Center" />
-                        <Label 
-                            Text="Google" 
-                            TextColor="White" 
-                            FontSize="Medium" 
-                            VerticalOptions="Center" />
-                    </HorizontalStackLayout>
-                </Frame>
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
             </VerticalStackLayout>
 
-            <VerticalStackLayout 
-                Grid.Column="1" 
-                Spacing="20" 
-                HorizontalOptions="Center">
+            <!-- Password entry -->
+            <VerticalStackLayout>
                 <Label 
-                    Text="New here? Create an Account ok" 
+                    Text="Password" 
+                    FontSize="Small" 
                     FontAttributes="Bold"
-                    FontSize="25" />
+                    Padding="0,0,0,10"/>
+                <Entry 
+                    x:Name="passwordEntry" 
+                    IsPassword="True" 
+                    HeightRequest="50" 
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!-- Log in button -->
+            <Button 
+                Text="Log in" 
+                FontAttributes="Bold"
+                Clicked="OnLoginClicked" 
+                BackgroundColor="Blue" 
+                TextColor="White" 
+                HeightRequest="50" 
+                WidthRequest="300"
+                HorizontalOptions="Center"/>
+
+       
+
+
+            <!-- Sign up navigation -->
+            <VerticalStackLayout 
+                HorizontalOptions="Center" 
+                Spacing="20">
+                <Label 
+                    Text="New here? Create an Account" 
+                    FontAttributes="Bold"
+                    FontSize="15" 
+                    HorizontalOptions="Center" />
                 <Button Text="Sign Up" 
                         Clicked="NavigateToSignup" 
                         BackgroundColor="Blue" 
                         TextColor="White" 
                         HeightRequest="50" 
                         WidthRequest="250" 
-                        CornerRadius="10" />        
+                        CornerRadius="10" 
+                        HorizontalOptions="Center"/>
             </VerticalStackLayout>
-        </Grid>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
