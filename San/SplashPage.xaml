@@ -1,0 +1,27 @@
+
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.SplashPage"
+             BackgroundColor="White">
+    <VerticalStackLayout 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center">
+        <Label x:Name="TitleLabel" 
+               Text="Industrial Trade Jobs" 
+               FontSize="56" 
+               TextColor="Blue" 
+               Opacity="0" 
+               FontAttributes="Bold"/>
+        <Label x:Name="SubtitleLabel" 
+               Text="A place for workers." 
+               FontSize="40" 
+               TextColor="Black" 
+               Opacity="0"/>
+        <Label x:Name="DeveloperLabel" 
+               Text="Developed by SAN Incorporation" 
+               FontSize="34" 
+               TextColor="Gray"  
+               Opacity="0"/>
+    </VerticalStackLayout>
+</ContentPage>

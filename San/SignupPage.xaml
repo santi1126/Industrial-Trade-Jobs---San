@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.SignupPage">
+
+    <VerticalStackLayout Padding="20" Spacing="5">
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="Start" 
+                     Margin="0,20,0,30">
+
+            <Label Text="Industrial Trade Jobs" 
+                   TextColor="Blue" 
+                   FontSize="50" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+            <Label Text="A place for workers." 
+                   TextColor="Black" 
+                   FontSize="25" 
+                   HorizontalOptions="Center" />
+            <Label Text="Developed by SAN Incorporation" 
+                   TextColor="Gray" 
+                   FontSize="12.5" 
+                   HorizontalOptions="Center" />
+        </StackLayout>
+
+        <Grid ColumnDefinitions="*,*" 
+              Padding="10" 
+              RowSpacing="15">
+            <VerticalStackLayout 
+                Grid.Column="0" 
+                Spacing="10">
+                <VerticalStackLayout>
+                    <Label Text="Create your account!" 
+                           FontSize="Medium" 
+                           FontAttributes="Bold" />
+                    <Label Text="Enter your required information" 
+                           FontSize="Small" 
+                           Padding="0,2,0,5"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Email"  
+                           FontSize="Small" 
+                           FontAttributes="Bold" />
+                    <Entry x:Name="emailEntry" 
+                           Keyboard="Email" 
+                           HeightRequest="40" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="First Name" 
+                           FontSize="Small" 
+                           FontAttributes="Bold" />
+                    <Entry x:Name="firstNameEntry" 
+                           HeightRequest="40"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Last Name" 
+                           FontSize="Small" 
+                           FontAttributes="Bold" />
+                    <Entry x:Name="lastNameEntry" 
+                           HeightRequest="40"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Password" 
+                           FontSize="Small" 
+                           FontAttributes="Bold" />
+                    <Entry x:Name="passwordEntry" 
+                           IsPassword="True" 
+                           HeightRequest="40"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Confirm Password" 
+                           FontSize="Small" 
+                           FontAttributes="Bold" />
+                    <Entry x:Name="confirmPasswordEntry" 
+                           IsPassword="True" 
+                           HeightRequest="40"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" 
+                                 HorizontalOptions="Center" 
+                                 VerticalOptions="Center" 
+                                 Spacing="15">
+                <Image Source="signuplogo.png" 
+                       HeightRequest="250" 
+                       WidthRequest="250" 
+                       HorizontalOptions="Center" />
+
+                     <Button Text="Sign Up" 
+                        Clicked="OnSignupClicked"
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        HeightRequest="45" 
+                        WidthRequest="250" 
+                        CornerRadius="10" />
+
+                <Label Text="By clicking continue, you agree to our Terms of Service and Privacy Policy" 
+                       FontSize="Small" 
+                       FontAttributes="Italic" 
+                       HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

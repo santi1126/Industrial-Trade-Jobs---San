@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.LoginPage">
+    <VerticalStackLayout 
+        Padding="20" 
+        Spacing="10">
+        <StackLayout 
+            HorizontalOptions="Center" 
+            VerticalOptions="Start" 
+            Margin="0,20,0,40">
+            <Label 
+                Text="Industrial Trade Jobs" 
+                TextColor="Blue" 
+                FontSize="100" 
+                HorizontalOptions="Center" 
+                FontAttributes="Bold" />
+            <Label 
+                Text="A place for workers." 
+                TextColor="Black" 
+                FontSize="50" 
+                HorizontalOptions="Center" 
+                FontAttributes="Bold"/>
+            <Label 
+                Text="Developed by SAN Incorporation" 
+                TextColor="Gray" 
+                FontSize="25" 
+                HorizontalOptions="Center" 
+                FontAttributes="Bold"/>
+        </StackLayout>
+
+        <Grid 
+            x:Name="LoginGrid"
+            ColumnDefinitions="*,*" 
+            Padding="10">
+
+            <VerticalStackLayout 
+                Grid.Column="0" 
+                Spacing="50">
+
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Enter your email" 
+                        FontSize="Small" 
+                        FontAttributes="Bold"
+                        Padding="125,0,0,10"/>
+
+                    <Entry 
+                        x:Name="emailEntry" 
+                        Keyboard="Email" 
+                        HeightRequest="50" 
+                        WidthRequest="675"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Password" 
+                        FontSize="Small" 
+                        FontAttributes="Bold"
+                        Padding="125,0,0,10"/>
+                    <Entry 
+                        x:Name="passwordEntry" 
+                        IsPassword="True" 
+                        HeightRequest="50" 
+                        WidthRequest="675"/>
+                </VerticalStackLayout>
+                <Button 
+                    Text="Log in" 
+                    FontAttributes="Bold"
+                    Clicked="OnLoginClicked" 
+                    BackgroundColor="Blue" 
+                    TextColor="White" 
+                    HeightRequest="50" 
+                    WidthRequest="675"/>
+                <Label 
+                    Text="or continue with" 
+                    FontAttributes="Bold"
+                    FontSize="Small" 
+                    HorizontalOptions="Center"/>
+                <Frame 
+                    BackgroundColor="Gray" 
+                    CornerRadius="5" 
+                    HeightRequest="50" 
+                    WidthRequest="675">
+                    <HorizontalStackLayout 
+                        Padding="5" 
+                        Spacing="10" 
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center">
+                        <Image 
+                            Source="googlelogo.png" 
+                            WidthRequest="25" 
+                            HeightRequest="25" 
+                            VerticalOptions="Center" />
+                        <Label 
+                            Text="Google" 
+                            TextColor="White" 
+                            FontSize="Medium" 
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout 
+                Grid.Column="1" 
+                Spacing="20" 
+                HorizontalOptions="Center">
+                <Label 
+                    Text="New here? Create an Account" 
+                    FontAttributes="Bold"
+                    FontSize="25" />
+                <Button Text="Sign Up" 
+                        Clicked="NavigateToSignup" 
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        HeightRequest="50" 
+                        WidthRequest="250" 
+                        CornerRadius="10" />        
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
