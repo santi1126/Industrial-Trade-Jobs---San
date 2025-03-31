@@ -36,32 +36,32 @@
 
             <VerticalStackLayout 
                 Grid.Column="0" 
-                Spacing="50">
+                Spacing="12">
 
                 <VerticalStackLayout>
                     <Label 
                         Text="Enter your email" 
                         FontSize="Small" 
                         FontAttributes="Bold"
-                        Padding="125,0,0,10"/>
+                        Padding="215,0,0,10"/>
 
                     <Entry 
                         x:Name="emailEntry" 
                         Keyboard="Email" 
                         HeightRequest="50" 
-                        WidthRequest="675"/>
+                        WidthRequest="500"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
                     <Label 
                         Text="Password" 
                         FontSize="Small" 
                         FontAttributes="Bold"
-                        Padding="125,0,0,10"/>
+                        Padding="215,0,0,10"/>
                     <Entry 
                         x:Name="passwordEntry" 
                         IsPassword="True" 
                         HeightRequest="50" 
-                        WidthRequest="675"/>
+                        WidthRequest="500"/>
                 </VerticalStackLayout>
                 <Button 
                     Text="Log in" 
@@ -70,7 +70,7 @@
                     BackgroundColor="Blue" 
                     TextColor="White" 
                     HeightRequest="50" 
-                    WidthRequest="675"/>
+                    WidthRequest="500"/>
                 <Label 
                     Text="or continue with" 
                     FontAttributes="Bold"
@@ -80,7 +80,7 @@
                     BackgroundColor="Gray" 
                     CornerRadius="5" 
                     HeightRequest="50" 
-                    WidthRequest="675">
+                    WidthRequest="500">
                     <HorizontalStackLayout 
                         Padding="5" 
                         Spacing="10" 

@@ -28,57 +28,61 @@
               RowSpacing="15">
             <VerticalStackLayout 
                 Grid.Column="0" 
-                Spacing="10">
+                Spacing="12">
                 <VerticalStackLayout>
                     <Label Text="Create your account!" 
                            FontSize="Medium" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold" 
+                           Padding="215,2,0,5"/>
                     <Label Text="Enter your required information" 
                            FontSize="Small" 
-                           Padding="0,2,0,5"/>
+                           Padding="215,2,0,5"/>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="Email"  
                            FontSize="Small" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold"
+                            Padding="215,2,0,5"/>
                     <Entry x:Name="emailEntry" 
                            Keyboard="Email" 
-                           HeightRequest="40" />
+                           HeightRequest="40"
+                           WidthRequest="500"
+                          />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="First Name" 
                            FontSize="Small" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold"  Padding="215,2,0,5"/>
                     <Entry x:Name="firstNameEntry" 
-                           HeightRequest="40"/>
+                           HeightRequest="40"  WidthRequest="500"/>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="Last Name" 
                            FontSize="Small" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold" Padding="215,2,0,5" />
                     <Entry x:Name="lastNameEntry" 
-                           HeightRequest="40"/>
+                           HeightRequest="40"  WidthRequest="500"/>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="Password" 
                            FontSize="Small" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold"  Padding="215,2,0,5" />
                     <Entry x:Name="passwordEntry" 
                            IsPassword="True" 
-                           HeightRequest="40"/>
+                           HeightRequest="40"  WidthRequest="500"/>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <Label Text="Confirm Password" 
                            FontSize="Small" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold"  Padding="215,2,0,5"/>
                     <Entry x:Name="confirmPasswordEntry" 
                            IsPassword="True" 
-                           HeightRequest="40"/>
+                           HeightRequest="40"  WidthRequest="500"/>
                 </VerticalStackLayout>
             </VerticalStackLayout>
 
