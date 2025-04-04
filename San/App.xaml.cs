@@ -7,7 +7,7 @@ namespace San
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new SplashPage());
+            MainPage = new NavigationPage(new WorkerApplicants());
         }
     }
 }

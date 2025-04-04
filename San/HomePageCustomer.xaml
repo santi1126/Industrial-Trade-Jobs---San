@@ -1,0 +1,62 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.HomePageCustomer"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Header Section: Create Job Request, Customer Name, and Profile Image -->
+            <HorizontalStackLayout Spacing="50" VerticalOptions="Center">
+                <!-- Create Job Request Button -->
+                <Button Text="Create Job Request" BackgroundColor="#4CAF50" TextColor="White" WidthRequest="200" HeightRequest="50" CornerRadius="25" FontSize="Medium"/>
+
+                <!-- Customer Name -->
+                <Label Text="NAME OF THE CUSTOMER" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#333333"/>
+
+                <!-- Profile Image -->
+                <Frame CornerRadius="37.5" Padding="0" HasShadow="True" WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
+                    <Image Source="profile_image.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                </Frame>
+            </HorizontalStackLayout>
+
+            <!-- Current Job Request Section -->
+            <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label Text="Current Job Request:" FontAttributes="Bold" VerticalOptions="Center" TextColor="#333333"/>
+                <Label Text="{Binding CurrentJobRequest}" VerticalOptions="Center" TextColor="Gray" FontSize="Medium"/>
+            </HorizontalStackLayout>
+
+            <!-- Divider Line -->
+            <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,15"/>
+
+            <!-- Jobs Created Previously Section -->
+            <Label Text="Jobs Created Previously:" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" TextColor="#333333" />
+
+            <StackLayout Padding="10" Spacing="15">
+                <!-- Example of a previous job -->
+                <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+                <Label Text="Job Title: Carpentry" FontAttributes="Bold" />
+                <Label Text="Job Description: Detailed description here." FontSize="Small" TextColor="Gray"/>
+                <Label Text="Status: In Progress" FontSize="Small" TextColor="Gray"/>
+                <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+            </StackLayout>
+
+            <!-- Divider Line -->
+            <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,15"/>
+
+            <!-- Workers that Applied Section -->
+            <Label Text="Workers that Applied:" FontAttributes="Bold" FontSize="Medium" TextColor="#333333" />
+
+            <StackLayout Padding="10" Spacing="15">
+                <!-- Example of an applicant -->
+                <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+                <Label Text="Juan Dela Cruz - Carpentry" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Status: Applied" FontSize="Small" TextColor="Gray"/>
+                <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+            </StackLayout>
+
+            <!-- Add more previous jobs and workers as needed -->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

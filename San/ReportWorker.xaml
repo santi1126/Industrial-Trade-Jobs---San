@@ -1,0 +1,72 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.ReportWorker"
+             BackgroundColor="White">
+
+    <Grid ColumnDefinitions="1.5*,4*" Padding="10">
+
+        <!-- Left Panel -->
+        <VerticalStackLayout Grid.Column="0" BackgroundColor="#F7F8FA" Padding="15">
+            <Label Text="Workers Information" FontSize="Medium" FontAttributes="Bold"/>
+
+            <StackLayout Padding="10">
+                <Label Text="John Doe" FontSize="Large" FontAttributes="Bold"/>
+                <Label Text="Skillset: Carpentry, Plumbing, Electrical" FontSize="Small" TextColor="Gray"/>
+            </StackLayout>
+
+            <Button Text="+" FontSize="Large" 
+                    BackgroundColor="White" 
+                    BorderColor="Black" 
+                    BorderWidth="1" 
+                    WidthRequest="40"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <!-- Right Panel -->
+        <VerticalStackLayout Grid.Column="1" BackgroundColor="#EEF6FC" Padding="20" Spacing="15">
+
+            <!-- Worker Profile Section -->
+            <HorizontalStackLayout Spacing="20">
+                <Frame CornerRadius="37.5" Padding="0" HasShadow="False"
+                       WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
+                    <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                </Frame>
+
+                <VerticalStackLayout>
+                    <Label Text="John Doe" FontSize="Large" FontAttributes="Bold"/>
+                    <Label Text="Skillset: Carpentry, Plumbing, Electrical" FontSize="Small" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!-- Report Form Section -->
+            <VerticalStackLayout Spacing="15">
+
+                <!-- Report For -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Report For:" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Entry x:Name="ReportForEntry" Placeholder="Enter Report Title" BackgroundColor="White" WidthRequest="300" HeightRequest="40"/>
+                </HorizontalStackLayout>
+
+                <!-- Other Reason -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Other Reason:" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Entry x:Name="OtherReasonEntry" Placeholder="Enter Additional Reason" BackgroundColor="White" WidthRequest="300" HeightRequest="40"/>
+                </HorizontalStackLayout>
+
+                <!-- Attachments -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Sent Attachments (Optional):" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Button Text="Upload Attachment" BackgroundColor="#F0F0F0" WidthRequest="150"/>
+                </HorizontalStackLayout>
+
+                <!-- Action Buttons -->
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="Submit" BackgroundColor="Green" TextColor="White" WidthRequest="150"/>
+                    <Button Text="Cancel" BackgroundColor="DarkRed" TextColor="White" WidthRequest="150"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
