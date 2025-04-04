@@ -1,4 +1,5 @@
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
 using System;
 
 namespace San
@@ -21,18 +22,26 @@ namespace San
                 return;
             }
 
-            string storedEmail = Preferences.Get("userEmail", string.Empty);
-            string storedPassword = Preferences.Get("userPassword", string.Empty);
+            // ✅ Admin credentials
+            if (email == "San" && password == "PassWord123")
+            {
+                await DisplayAlert("Welcome", "Logged in as Admin", "OK");
+                await Navigation.PushAsync(new AdminMenuPage()); // Admin-only menu page
+                return;
+            }
 
-            if (email == storedEmail && password == storedPassword)
+            // ✅ Regular user credentials (from Preferences)
+            string savedEmail = Preferences.Get("userEmail", string.Empty);
+            string savedPassword = Preferences.Get("userPassword", string.Empty);
+
+            if (email == savedEmail && password == savedPassword)
             {
-                await DisplayAlert("Success", "Login successful!", "OK");
-                await Navigation.PushAsync(new CreateJobRequest());
+                await DisplayAlert("Welcome", "Login successful!", "OK");
+                await Navigation.PushAsync(new MenuPage()); // Redirect to your user’s main page
+                return;
             }
-            else
-            {
-                await DisplayAlert("Error", "Invalid email or password", "OK");
-            }
+
+            await DisplayAlert("Error", "Invalid email or password", "OK");
         }
 
         private async void NavigateToSignup(object sender, EventArgs e)

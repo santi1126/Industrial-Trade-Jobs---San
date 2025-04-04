@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.AdminMenuPage"
+             Title="Industrial Trade Jobs">
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <HorizontalStackLayout Grid.Row="0" Spacing="15" Padding="10" BackgroundColor="DeepSkyBlue">
+            <Label Text="MENU" FontAttributes="Bold" FontSize="18" TextColor="Black" />
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+             
+                <Entry x:Name="SearchEntry" 
+                       Placeholder="Search..." 
+                       TextColor="Black"
+                       BackgroundColor="gray" 
+                       VerticalTextAlignment="Center" 
+                       WidthRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       TextChanged="OnSearchTextChanged"/>
+            </HorizontalStackLayout>
+
+            <ImageButton Source="job.png"
+                         HeightRequest="30"
+                         WidthRequest="30"
+                         BackgroundColor="Transparent" />
+        </HorizontalStackLayout>
+
+        <!-- Main Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="15" BackgroundColor="White">
+                <Label Text="Admin Features" 
+                       FontSize="20" 
+                       FontAttributes="Bold"
+                       Margin="0,0,0,15"
+                       TextColor="Black" />
+
+                <Grid x:Name="TileContainer" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+                    <!-- Worker Reports -->
+                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="LightGray" BackgroundColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnWorkerReportsTapped" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                            <Image Source="job.png" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="Worker Reports" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Lists of Accounts -->
+                    <Frame Grid.Row="0" Grid.Column="1" BorderColor="LightGray" BackgroundColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListsOfAccountsTapped" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                            <Image Source="job.png" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="Lists of Accounts" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Add Accounts -->
+                    <Frame Grid.Row="1" Grid.Column="0" BorderColor="LightGray" BackgroundColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAddAccountsTapped" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                            <Image Source="job.png" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="Add Accounts" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Job Status -->
+                    <Frame Grid.Row="1" Grid.Column="1" BorderColor="LightGray" BackgroundColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnJobStatusTapped" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                            <Image Source="job.png" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="Job Status" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Work History -->
+                    <Frame Grid.Row="2" Grid.Column="0" BorderColor="LightGray" BackgroundColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnWorkHistoryTapped" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                            <Image Source="job.png" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="Work History" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Reviews -->
+                    <Frame Grid.Row="2" Grid.Column="1" BorderColor="LightGray" BackgroundColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnReviewsTapped" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                            <Image Source="job.png" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="Reviews" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+    <!-- Toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Dashboard"  Order="Primary" Priority="0"/>
+        <ToolbarItem Text="Profile"  Order="Secondary" Priority="3"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

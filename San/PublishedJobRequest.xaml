@@ -1,0 +1,96 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.PublishedJobRequest"
+             BackgroundColor="White">
+
+    <Grid ColumnDefinitions="1.5*,4*" Padding="10">
+
+        <!-- Left Panel (List of Job Requests) -->
+        <VerticalStackLayout Grid.Column="0" BackgroundColor="#F7F8FA" Padding="15">
+            <Label Text="Published Job Requests" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+
+            <StackLayout Padding="10">
+                <RadioButton Content="Carpentry Job (1/1)" GroupName="Jobs" IsChecked="True" TextColor="Black"/>
+                <RadioButton Content="Cleaning Job (1/2)" GroupName="Jobs" TextColor="Black"/>
+                <RadioButton Content="Interior Design Job (1/1)" GroupName="Jobs" TextColor="Black"/>
+            </StackLayout>
+
+            <Button Text="+" FontSize="Large" 
+                    BackgroundColor="White" 
+                    BorderColor="Black" 
+                    BorderWidth="1" 
+                    WidthRequest="40"
+                    HorizontalOptions="Center" 
+                    TextColor="Black"/>
+        </VerticalStackLayout>
+
+        <!-- Right Panel (Job Request Details) -->
+        <VerticalStackLayout Grid.Column="1" BackgroundColor="#EEF6FC" Padding="20" Spacing="15">
+
+            <!-- Header Section -->
+            <HorizontalStackLayout Spacing="20">
+                <Frame CornerRadius="37.5" Padding="0" HasShadow="False"
+                       WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
+                    <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                </Frame>
+
+                <VerticalStackLayout>
+                    <Label Text="Job Request Name (1/1)" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text="Request made by Helena Dela Cruz" FontSize="Small" TextColor="Gray"/>
+                </VerticalStackLayout>
+
+                <Button Text="Completed" BackgroundColor="DarkGreen" TextColor="White"/>
+            </HorizontalStackLayout>
+
+            <!-- Add some space after the profile picture -->
+            <BoxView HeightRequest="20" />
+
+            <!-- Edit and Delete Profile Buttons -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!-- Edit Button -->
+                <Button Text="Edit" BackgroundColor="DarkGreen" TextColor="White" WidthRequest="75" />
+                <!-- Delete Button -->
+                <Button Text="Delete" BackgroundColor="DarkRed" TextColor="White" WidthRequest="75"/>
+            </HorizontalStackLayout>
+
+            <!-- Job Details Display -->
+            <VerticalStackLayout Spacing="15">
+
+                <!-- Currency Display -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Currency:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                    <Label x:Name="CurrencyLabel" VerticalOptions="Center" TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <!-- Rate Display -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Rate:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                    <Label x:Name="RateLabel" VerticalOptions="Center" TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <!-- Time Period Display -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Time Period:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                    <Label x:Name="TimePeriodLabel" VerticalOptions="Center" TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <!-- Skillset Display -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Skillset Required:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                    <Label x:Name="SkillsetLabel" VerticalOptions="Center" TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <!-- Location Display -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Location:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                    <Label x:Name="LocationLabel" VerticalOptions="Center" TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <!-- Job Description Display -->
+                <Label Text="Job Description:" FontAttributes="Bold" TextColor="Black"/>
+                <Label x:Name="DescriptionLabel" TextColor="Black"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

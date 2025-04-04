@@ -1,0 +1,93 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:San"
+             x:Class="San.NegotiationPage"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <local:NegotiationViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid ColumnDefinitions="2*,4*,2*" Padding="10">
+
+        <!-- Left Panel: Negotiations List with Search -->
+        <VerticalStackLayout Grid.Column="0" BackgroundColor="#F7F8FA" Padding="15">
+            <Label Text="Negotiations" FontSize="Medium" FontAttributes="Bold"/>
+
+            <!-- Search Bar for Workers -->
+            <Entry x:Name="SearchEntry" Placeholder="Search Worker" BackgroundColor="White" HeightRequest="40" TextChanged="OnSearchTextChanged"/>
+
+            <StackLayout Padding="10" x:Name="NegotiationList">
+                <Button Text="John Doe - Carpentry Job" BackgroundColor="#EEF6FC" WidthRequest="200" HeightRequest="50"/>
+                <Button Text="Jane Smith - Electrical Job" BackgroundColor="#EEF6FC" WidthRequest="200" HeightRequest="50"/>
+                <Button Text="Michael Johnson - Plumbing Job" BackgroundColor="#EEF6FC" WidthRequest="200" HeightRequest="50"/>
+                <!-- Add more buttons as needed for each job negotiation -->
+            </StackLayout>
+        </VerticalStackLayout>
+
+        <!-- Center Panel: Conversation and Worker Details -->
+        <VerticalStackLayout Grid.Column="1" BackgroundColor="#EEF6FC" Padding="20" Spacing="15">
+
+            <!-- Worker Profile Section (appears above the conversation) -->
+            <HorizontalStackLayout Spacing="20">
+                <Frame CornerRadius="37.5" Padding="0" HasShadow="False"
+                       WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
+                    <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                </Frame>
+
+                <VerticalStackLayout>
+                    <Label Text="John Doe" FontSize="Large" FontAttributes="Bold"/>
+                    <Label Text="Skillset: Carpentry, Plumbing, Electrical" FontSize="Small" TextColor="Gray"/>
+                    <Label Text="Description: Experienced worker specializing in home repairs." FontSize="Small"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!-- Accept or Decline Buttons -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Accept" BackgroundColor="Green" TextColor="White" WidthRequest="100"/>
+                <Button Text="Decline" BackgroundColor="DarkRed" TextColor="White" WidthRequest="100"/>
+            </HorizontalStackLayout>
+
+            <!-- Conversation Section -->
+            <Label Text="Conversation:" FontAttributes="Bold"/>
+            <ScrollView HeightRequest="200">
+                <VerticalStackLayout Spacing="10">
+                    <!-- Bind conversation messages to the UI -->
+                    <CollectionView ItemsSource="{Binding Messages}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="#E8E8E8" Padding="10" CornerRadius="10" Margin="5">
+                                    <Label Text="{Binding Text}" FontSize="Small"/>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Message Input Section -->
+            <HorizontalStackLayout Spacing="10">
+                <Entry x:Name="MessageEntry" Placeholder="Type your message..." BackgroundColor="White" WidthRequest="300" HeightRequest="40" TextChanged="OnMessageTextChanged"/>
+                <Button Text="Send" BackgroundColor="Blue" TextColor="White" WidthRequest="80" HeightRequest="40" Clicked="OnSendMessage"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+        <!-- Right Panel: Profile and Actions -->
+        <VerticalStackLayout Grid.Column="2" BackgroundColor="#F7F8FA" Padding="15">
+            <Label Text="Profile Actions" FontSize="Medium" FontAttributes="Bold"/>
+
+            <!-- Search Chat and Messages Section -->
+            <Entry Placeholder="Search Messages" BackgroundColor="White" HeightRequest="40"/>
+
+            <Button Text="View Profile" BackgroundColor="#4CAF50" TextColor="White" WidthRequest="150" HeightRequest="50"/>
+
+            <Button Text="Block" BackgroundColor="DarkRed" TextColor="White" WidthRequest="150" HeightRequest="50"/>
+
+            <Button Text="Report Worker" BackgroundColor="#FF9800" TextColor="White" WidthRequest="150" HeightRequest="50"/>
+
+            <!-- Additional options if needed -->
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

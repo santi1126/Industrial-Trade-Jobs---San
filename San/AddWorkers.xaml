@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.AddWorkers"
+             BackgroundColor="#F5F9FC">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Header -->
+        <Label Grid.Row="0"
+               Text="Create New Worker"
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="20,20,20,10"
+               TextColor="Black"
+               HorizontalOptions="Start" />
+
+        <!-- Main Body with Left Menu and Right Form Layout -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="200, *"
+              Padding="10">
+            <!-- Left: Menu Placeholder -->
+            <VerticalStackLayout BackgroundColor="#1A365D"
+                                 Spacing="20"
+                                 Padding="10"
+                                 WidthRequest="180">
+                <Label Text="Menu"
+                       TextColor="White"
+                       FontSize="18"
+                       FontAttributes="Bold" />
+
+                <Button Text="Menu"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        Clicked="OnMenuClicked" />
+
+                <Button Text="Reports"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        Clicked="OnReportsClicked" />
+
+                <Button Text="Accounts"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        Clicked="OnAccountsClicked" />
+            </VerticalStackLayout>
+
+            <!-- Right: Form Content -->
+            <ScrollView Grid.Column="1">
+                <VerticalStackLayout Padding="10" Spacing="20">
+
+                    <!-- First Row of Info -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <!-- Avatar Section -->
+                        <Frame BackgroundColor="White"
+                               CornerRadius="12"
+                               Padding="20"
+                               HasShadow="True"
+                               Grid.Column="0">
+                            <VerticalStackLayout Spacing="100" HorizontalOptions="Center">
+                                <Frame HeightRequest="100" WidthRequest="100"
+                                       CornerRadius="50"
+                                       IsClippedToBounds="True"
+                                       BackgroundColor="#E2E8F0">
+                                    <Image x:Name="avatarImage" Source="googlelogo.png" />
+                                </Frame>
+                                <Button Text="Set Avatar"
+                                        BackgroundColor="#1A365D"
+                                        TextColor="White"
+                                        CornerRadius="25"
+                                        WidthRequest="140"
+                                        HeightRequest="44"
+                                        FontAttributes="Bold"
+                                        Clicked="OnSetAvatarClicked" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Personal Info -->
+                        <Frame BackgroundColor="White"
+                               CornerRadius="12"
+                               Padding="20"
+                               HasShadow="True"
+                               Grid.Column="1">
+                            <VerticalStackLayout Spacing="10">
+                                <Label Text="Personal Information"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+                                <Entry x:Name="firstNameEntry" Placeholder="First Name"
+                                       TextColor="Black" PlaceholderColor="Black"
+                                       HeightRequest="45" BackgroundColor="Gray" />
+                                <Entry x:Name="lastNameEntry" Placeholder="Last Name"
+                                       TextColor="Black" PlaceholderColor="Black"
+                                       HeightRequest="45" BackgroundColor="Gray" />
+                                <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email"
+                                       TextColor="Black" PlaceholderColor="Black"
+                                       HeightRequest="45" BackgroundColor="Gray" />
+                            </VerticalStackLayout>
+                            
+                            
+                        </Frame>
+                        
+                        
+                    </Grid>
+
+                    <!-- Second Row of Info -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <!-- Job Info -->
+                        <Frame BackgroundColor="White"
+                               CornerRadius="12"
+                               Padding="20"
+                               HasShadow="True"
+                               Grid.Column="0">
+                            <VerticalStackLayout Spacing="15">
+                                <Label Text="Email"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+                                <Entry x:Name="jobTitleEntry" Placeholder="Enter email"
+                                       TextColor="Black" PlaceholderColor="Black"
+                                       HeightRequest="45" BackgroundColor="Gray" />
+                                <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True"
+                                       TextColor="Black" PlaceholderColor="Black"
+                                       HeightRequest="45" BackgroundColor="Gray" />
+                                <Button Text="Generate Password"
+                                        BackgroundColor="#4A5568"
+                                        TextColor="White"
+                                        CornerRadius="20"
+                                        HeightRequest="40"
+                                        FontSize="14"
+                                        Clicked="OnGeneratePasswordClicked" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Skills Section -->
+                        <Frame BackgroundColor="White"
+                               CornerRadius="12"
+                               Padding="20"
+                               HasShadow="True"
+                               Grid.Column="1">
+                            <VerticalStackLayout Spacing="15">
+                                <Label Text="Skills"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+                                <Grid ColumnDefinitions="*,Auto" RowSpacing="0">
+                                    <Entry x:Name="skillEntry" Placeholder="Enter skill"
+                                           TextColor="Black" PlaceholderColor="Black"
+                                           HeightRequest="45" BackgroundColor="Gray"
+                                           Grid.Column="0" />
+                                    <Button Text="Add"
+                                            BackgroundColor="#1A365D"
+                                            TextColor="White"
+                                            WidthRequest="70"
+                                            CornerRadius="5"
+                                            HeightRequest="45"
+                                            FontSize="14"
+                                            Grid.Column="1"
+                                            Clicked="OnAddSkillClicked" />
+                                </Grid>
+
+                                <CollectionView x:Name="selectedSkillsCollection"
+                                                HeightRequest="100"
+                                                EmptyView="No skills selected">
+                                    <CollectionView.ItemsLayout>
+                                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame BackgroundColor="#2D3748"
+                                                   Padding="8,4"
+                                                   Margin="4"
+                                                   CornerRadius="5">
+                                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                                    <Label Text="{Binding}"
+                                                           TextColor="White"
+                                                           VerticalOptions="Center" />
+                                                    <Button Text="×"
+                                                            FontSize="14"
+                                                            Padding="0"
+                                                            WidthRequest="25"
+                                                            HeightRequest="25"
+                                                            BackgroundColor="Transparent"
+                                                            TextColor="White"
+                                                            CommandParameter="{Binding}"
+                                                            Clicked="OnRemoveSkillClicked" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+
+        <!-- Footer Buttons -->
+        <Grid Grid.Row="2"
+              Padding="20,15"
+              BackgroundColor="White"
+              ColumnDefinitions="*,*">
+            <Button Grid.Column="0"
+                    Text="Cancel"
+                    BackgroundColor="#DC2626"
+                    TextColor="White"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    FontAttributes="Bold"
+                    Margin="0,0,5,0"
+                    Clicked="OnCancelClicked" />
+            <Button Grid.Column="1"
+                    Text="Create"
+                    BackgroundColor="#1A365D"
+                    TextColor="White"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    FontAttributes="Bold"
+                    Margin="5,0,0,0"
+                    Clicked="OnCreateClicked" />
+        </Grid>
+
+        <!-- Loading Overlay -->
+        <Grid x:Name="loadingOverlay"
+              Grid.RowSpan="3"
+              BackgroundColor="#80000000"
+              IsVisible="False">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="15">
+                <ActivityIndicator IsRunning="True" Color="White" WidthRequest="50" HeightRequest="50" />
+                <Label Text="Creating worker..."
+                       TextColor="White"
+                       FontSize="16"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

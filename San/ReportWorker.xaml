@@ -1,0 +1,81 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.ReportWorker"
+             BackgroundColor="White">
+
+    <Grid ColumnDefinitions="1.5*,4*" Padding="20">
+
+        <!-- Left Panel -->
+        <VerticalStackLayout Grid.Column="0" BackgroundColor="#F7F8FA" Padding="15" Spacing="20">
+            <Label Text="Workers Information" FontSize="Medium" FontAttributes="Bold" TextColor="#333333"/>
+
+            <StackLayout Padding="10" Spacing="10">
+                <Label Text="John Doe" FontSize="Large" FontAttributes="Bold" TextColor="#333333"/>
+                <Label Text="Skillset: Carpentry, Plumbing, Electrical" FontSize="Small" TextColor="Gray"/>
+            </StackLayout>
+
+            <Button Text="+" FontSize="Large" 
+                    BackgroundColor="Black" 
+                    BorderColor="Black" 
+                    BorderWidth="1" 
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand" 
+                    CornerRadius="25" />
+        </VerticalStackLayout>
+
+        <!-- Right Panel -->
+        <VerticalStackLayout Grid.Column="1" BackgroundColor="#EEF6FC" Padding="20" Spacing="20">
+
+            <!-- Worker Profile Section -->
+            <HorizontalStackLayout Spacing="20" VerticalOptions="Start">
+                <Frame CornerRadius="37.5" Padding="0" HasShadow="True" WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
+                    <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                </Frame>
+
+                <VerticalStackLayout>
+                    <Label Text="John Doe" FontSize="Large" FontAttributes="Bold" TextColor="#333333"/>
+                    <Label Text="Skillset: Carpentry, Plumbing, Electrical" FontSize="Small" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!-- Report Form Section -->
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Report For -->
+                <Frame BorderColor="#E0E0E0" BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout Padding="10">
+                        <Label Text="Report For:" FontAttributes="Bold" VerticalOptions="Center" WidthRequest="120"/>
+                        <Entry x:Name="ReportForEntry" Placeholder="Enter Report Title" BackgroundColor="Gray" WidthRequest="200" HeightRequest="40"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!-- Other Reason -->
+                <Frame BorderColor="#E0E0E0" BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout Padding="10">
+                        <Label Text="Other Reason:" FontAttributes="Bold" VerticalOptions="Center" WidthRequest="120"/>
+                        <Entry x:Name="OtherReasonEntry" Placeholder="Enter Additional Reason" BackgroundColor="Gray" WidthRequest="200" HeightRequest="40" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!-- Attachments -->
+                <Frame BorderColor="#E0E0E0" BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout Padding="10" VerticalOptions="Center">
+                        <Label Text="Sent Attachments (Optional):" FontAttributes="Bold" VerticalOptions="Center" WidthRequest="200"/>
+                        <Button Text="Upload Attachment" BackgroundColor="Gray" WidthRequest="150" HeightRequest="40" CornerRadius="10"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!-- Action Buttons -->
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                    <Button Text="Submit" BackgroundColor="Green" TextColor="White" WidthRequest="150" HeightRequest="50" CornerRadius="10"/>
+                    <Button Text="Cancel" BackgroundColor="DarkRed" TextColor="White" WidthRequest="150" HeightRequest="50" CornerRadius="10"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

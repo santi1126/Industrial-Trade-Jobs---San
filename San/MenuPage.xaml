@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.MenuPage"
+             Title="Industrial Trade Jobs">
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <HorizontalStackLayout Grid.Row="0"  Spacing="15" Padding="10" BackgroundColor="#f5f5f5">
+            <Label Text="JOB APPLICANTS" StyleClass="CategoryTab" FontAttributes="Bold"  TextColor="Black"/>
+        
+        </HorizontalStackLayout>
+
+        <!-- Main Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="15"  BackgroundColor="White">
+                <Label Text="Status for Worker's Application" 
+                       FontSize="20" 
+                       FontAttributes="Bold"
+                       Margin="0,0,0,15"
+                     />
+
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+                    <!-- Carpentry Job -->
+                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <!-- Image -->
+                            <Grid Grid.Row="0" HeightRequest="150" BackgroundColor="LightGray">
+                                <Image Source="job.png" Aspect="AspectFill"/>
+                                <Grid BackgroundColor="#80000000" VerticalOptions="Start" Padding="10,5">
+                                    <Label Text="Carpentry Job (0/1)" TextColor="White" FontAttributes="Bold"/>
+                                </Grid>
+                                <Button Text="Completed" 
+                                        BackgroundColor="DarkGreen" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Margin="0,0,10,10"
+                                        Clicked="OnJobClicked"/>
+                            </Grid>
+                            <!-- Details -->
+                            <VerticalStackLayout Grid.Row="1" Padding="10" BackgroundColor="Gray">
+                                <Label Text="Current Applicants (2)" FontAttributes="Bold"/>
+                                <Label Text="Job Description" TextColor="Gray" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Cement Mixture Job -->
+                    <Frame Grid.Row="0" Grid.Column="1" BorderColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <!-- Image -->
+                            <Grid Grid.Row="0" HeightRequest="150" BackgroundColor="LightGray">
+                                <Image Source="job.png" Aspect="AspectFill"/>
+                                <Grid BackgroundColor="#80000000" VerticalOptions="Start" Padding="10,5">
+                                    <Label Text="Cement Mixture Job (0/2)" TextColor="White" FontAttributes="Bold"/>
+                                </Grid>
+                                <Button Text="In-Complete" 
+                                        BackgroundColor="#6495ED" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Margin="0,0,10,10"
+                                        Clicked="OnJobClicked"/>
+                            </Grid>
+                            <!-- Details -->
+                            <VerticalStackLayout Grid.Row="1" Padding="10" BackgroundColor="Gray">
+                                <Label Text="Current Applicants (0)" FontAttributes="Bold"/>
+                                <Label Text="Job Description" TextColor="Gray" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Furniture Carpentry Job -->
+                    <Frame Grid.Row="1" Grid.Column="0" BorderColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <!-- Image -->
+                            <Grid Grid.Row="0" HeightRequest="150" BackgroundColor="LightGray">
+                                <Image Source="job.png" Aspect="AspectFill"/>
+                                <Grid BackgroundColor="#80000000" VerticalOptions="Start" Padding="10,5">
+                                    <Label Text="Furniture Carpentry Job (0/1)" TextColor="White" FontAttributes="Bold"/>
+                                </Grid>
+                                <Button Text="In-Complete" 
+                                        BackgroundColor="#6495ED" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Margin="0,0,10,10"
+                                        Clicked="OnJobClicked"/>
+                            </Grid>
+                            <!-- Details -->
+                            <VerticalStackLayout Grid.Row="1" Padding="10" BackgroundColor="Gray">
+                                <Label Text="Current Applicants (2)" FontAttributes="Bold"/>
+                                <Label Text="Job Description" TextColor="Gray" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Garden Landscape Job -->
+                    <Frame Grid.Row="1" Grid.Column="1" BorderColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <!-- Image -->
+                            <Grid Grid.Row="0" HeightRequest="150" BackgroundColor="LightGray">
+                                <Image Source="job.png" Aspect="AspectFill"/>
+                                <Grid BackgroundColor="#80000000" VerticalOptions="Start" Padding="10,5">
+                                    <Label Text="Garden Landscape Job (2/3)" TextColor="White" FontAttributes="Bold"/>
+                                </Grid>
+                                <Button Text="In-Complete" 
+                                        BackgroundColor="#6495ED" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Margin="0,0,10,10"
+                                        Clicked="OnJobClicked"/>
+                            </Grid>
+                            <!-- Details -->
+                            <VerticalStackLayout Grid.Row="1" Padding="10" BackgroundColor="Gray">
+                                <Label Text="Current Applicants (5)" FontAttributes="Bold"/>
+                                <Label Text="Job Description" TextColor="Gray" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- House Carpentry Job -->
+                    <Frame Grid.Row="2" Grid.Column="0" BorderColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <!-- Image -->
+                            <Grid Grid.Row="0" HeightRequest="150" BackgroundColor="LightGray">
+                                <Image Source="job.png" Aspect="AspectFill"/>
+                                <Grid BackgroundColor="#80000000" VerticalOptions="Start" Padding="10,5">
+                                    <Label Text="House Carpentry Job (5/6)" TextColor="White" FontAttributes="Bold"/>
+                                </Grid>
+                                <Button Text="In-Complete" 
+                                        BackgroundColor="#6495ED" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Margin="0,0,10,10"
+                                        Clicked="OnJobClicked"/>
+                            </Grid>
+                            <!-- Details -->
+                            <VerticalStackLayout Grid.Row="1" Padding="10" BackgroundColor="Gray">
+                                <Label Text="Current Applicants" FontAttributes="Bold"/>
+                                <Label Text="Job Description" TextColor="Gray" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- 3-Story House Carpentry Job -->
+                    <Frame Grid.Row="2" Grid.Column="1" BorderColor="LightGray" CornerRadius="10" HasShadow="True" Padding="0">
+                        <Grid RowDefinitions="Auto,Auto,Auto">
+                            <!-- Image -->
+                            <Grid Grid.Row="0" HeightRequest="150" BackgroundColor="LightGray">
+                                <Image Source="job.png" Aspect="AspectFill"/>
+                                <Grid BackgroundColor="#80000000" VerticalOptions="Start" Padding="10,5">
+                                    <Label Text="3-Story House Carpentry Job (4/20)" TextColor="White" FontAttributes="Bold"/>
+                                </Grid>
+                                <Button Text="In-Complete" 
+                                        BackgroundColor="#6495ED" 
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Margin="0,0,10,10"
+                                        Clicked="OnJobClicked"/>
+                            </Grid>
+                            <!-- Details -->
+                            <VerticalStackLayout Grid.Row="1" Padding="10" BackgroundColor="Gray">
+                                <Label Text="Current Applicants" FontAttributes="Bold"/>
+                                <Label Text="Job Description" TextColor="Gray" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+    <!-- Navigation Bar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Clicked="OnHomeClicked" Order="Primary" Priority="0" />
+        <ToolbarItem Text="Browse" Clicked="OnBrowseClicked" Order="Primary" Priority="1" />
+        <ToolbarItem Text="History" Clicked="OnHistoryClicked" Order="Primary" Priority="2" />
+        <ToolbarItem Text="Profile" Clicked="OnProfileClicked" Order="Secondary" Priority="3" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

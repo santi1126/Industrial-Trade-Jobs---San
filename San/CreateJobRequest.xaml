@@ -3,106 +3,140 @@
              x:Class="San.CreateJobRequest"
              BackgroundColor="White">
 
-    <Grid ColumnDefinitions="1.5*,4*" Padding="10">
+    <ScrollView Padding="10">
+        <Grid ColumnDefinitions="1.5*,4*" Padding="10">
 
-        <!-- Left Panel -->
-        <VerticalStackLayout Grid.Column="0" BackgroundColor="#F7F8FA" Padding="15">
-            <Label Text="Job Requests Form You Created" FontSize="Medium" FontAttributes="Bold"/>
+            <!-- Left Panel -->
+            <VerticalStackLayout Grid.Column="0" BackgroundColor="#F7F8FA" Padding="15">
+                <Label Text="Job Requests Form You Created" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
 
-            <StackLayout Padding="10">
-                <RadioButton Content="Carpentry Job (0/1)" GroupName="Jobs"/>
-                <RadioButton Content="Cleaning Job (0/2)" GroupName="Jobs"/>
-                <RadioButton Content="Interior Design Job (0/1)" GroupName="Jobs"/>
-            </StackLayout>
+                <StackLayout Padding="10">
+                    <RadioButton Content="Carpentry Job (0/1)" GroupName="Jobs" TextColor="Black"/>
+                    <RadioButton Content="Cleaning Job (0/2)" GroupName="Jobs" TextColor="Black"/>
+                    <RadioButton Content="Interior Design Job (0/1)" GroupName="Jobs" TextColor="Black"/>
+                </StackLayout>
 
-            <Button Text="+" FontSize="Large" 
-                    BackgroundColor="White" 
-                    BorderColor="Black" 
-                    BorderWidth="1" 
-                    WidthRequest="40"
-                    HorizontalOptions="Center"/>
-        </VerticalStackLayout>
+                <Button Text="+" FontSize="Large" 
+                        BackgroundColor="White" 
+                        BorderColor="Black" 
+                        BorderWidth="1" 
+                        WidthRequest="40"
+                        HorizontalOptions="Center"/>
+            </VerticalStackLayout>
 
-        <!-- Right Panel -->
-        <VerticalStackLayout Grid.Column="1" BackgroundColor="#EEF6FC" Padding="20" Spacing="15">
+            <!-- Right Panel -->
+            <VerticalStackLayout Grid.Column="1" BackgroundColor="#EEF6FC" Padding="20" Spacing="15">
 
-            <!-- Header Section -->
-            <HorizontalStackLayout Spacing="15">
-                <Frame CornerRadius="37.5" Padding="0" HasShadow="False"
-                       WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
-                    <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
-                </Frame>
+                <!-- Header Section -->
+                <HorizontalStackLayout Spacing="20">
+                    <Frame CornerRadius="37.5" Padding="0" HasShadow="False"
+                           WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent">
+                        <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                    </Frame>
 
-                <VerticalStackLayout>
-                    <Label Text="Job Request Name (0/1)" FontSize="Large" FontAttributes="Bold"/>
-                    <Label Text="Request made by Helena Dela Cruz" FontSize="Small" TextColor="Gray"/>
+                    <VerticalStackLayout>
+                        <Label Text="Job Request Name (0/1)" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Request made by Helena Dela Cruz" FontSize="Small" TextColor="Gray"/>
+                    </VerticalStackLayout>
+
+                    <Button Text="In-Complete" BackgroundColor="#3446eb" TextColor="White"/>
+                </HorizontalStackLayout>
+
+                <!-- Add some space after the profile picture -->
+                <BoxView HeightRequest="20" />
+
+                <!-- Job Details Form -->
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Currency -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Currency:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                        <Frame BorderColor="Black"  Padding="0">
+                            <Picker x:Name="CurrencyPicker" TextColor="Black" BackgroundColor="CornflowerBlue" WidthRequest="200" HeightRequest="40" SelectedIndex="0">
+                                <Picker.Items>
+                                    <x:String>Select Currency</x:String>
+                                    <x:String>USD ($)</x:String>
+                                    <x:String>PHP (₱)</x:String>
+                                    <x:String>EUR (€)</x:String>
+                                    <x:String>Others</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+                    </HorizontalStackLayout>
+                  
+
+                    <!-- Rate -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Rate:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                        <Frame BorderColor="Black"  Padding="0">
+                            <Entry x:Name="RateEntry" Placeholder="Enter Rate"  TextColor="Black" Keyboard="Numeric" BackgroundColor="White" WidthRequest="200" HeightRequest="40"/>
+                        </Frame>
+                    </HorizontalStackLayout>
+
+                    <!-- Time Period -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Time Period:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                        <Frame BorderColor="Black"  Padding="0">
+                            <Picker x:Name="TimePeriodPicker"  TextColor="Black" WidthRequest="200" BackgroundColor="CornflowerBlue" HeightRequest="40" SelectedIndex="0">
+                                <Picker.Items>
+                                    <x:String>Select Time Period</x:String>
+                                    <x:String>Per Hour</x:String>
+                                    <x:String>Per Day</x:String>
+                                    <x:String>Per Project</x:String>
+                                    <x:String>Others</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+                    </HorizontalStackLayout>
+                  
+
                 </VerticalStackLayout>
 
-                <Button Text="In-Complete" BackgroundColor="DarkBlue" TextColor="White"/>
-            </HorizontalStackLayout>
+                <!-- Skillset -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Skillset Required:" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                    <Frame BorderColor="Black" Padding="0">
+                        <Picker x:Name="SkillsetPicker"  TextColor="Black" WidthRequest="200" BackgroundColor="CornflowerBlue" HeightRequest="40" SelectedIndex="0">
+                            <Picker.Items>
+                                <x:String>Select Skillset</x:String>
+                                <x:String>Carpentry</x:String>
+                                <x:String>Plumbing</x:String>
+                                <x:String>Electrical</x:String>
+                                <x:String>Cleaning</x:String>
+                                <x:String>Painting</x:String>
+                                <x:String>Others</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+                </HorizontalStackLayout>
 
-            <!-- Job Details Form -->
-            <Grid ColumnDefinitions="1*,3*" RowSpacing="10">
-                <Label Grid.Column="0" Text="Currency:" FontAttributes="Bold"/>
-                <Picker Grid.Column="1" x:Name="CurrencyPicker" Title="Select Currency">
-                    <Picker.Items>
-                        <x:String>USD ($)</x:String>
-                        <x:String>PHP (₱)</x:String>
-                        <x:String>EUR (€)</x:String>
-                        <x:String>Others</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Entry Grid.Column="1" x:Name="OtherCurrencyEntry" Placeholder="Enter Currency" BackgroundColor="White" IsVisible="False"/>
+                <!-- Location -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Location:" FontAttributes="Bold"  VerticalOptions="Center" TextColor="Black" />
+                    <Frame BorderColor="Black"  Padding="0">
+                        <Entry x:Name="LocationEntry" WidthRequest="500" HeightRequest="40" Placeholder="Enter Location" BackgroundColor="White" TextColor="Black"/>
+                    </Frame>
+                </HorizontalStackLayout>
 
-                <Label Grid.Column="0" Text="Rate:" FontAttributes="Bold"/>
-                <Entry Grid.Column="1" x:Name="RateEntry" Placeholder="Enter Rate" Keyboard="Numeric" BackgroundColor="White"/>
+                <!-- Job Description -->
+                <Label Text="Job Description:" FontAttributes="Bold" TextColor="Black"/>
+                <Frame BorderColor="Black"  Padding="0">
+                    <Editor x:Name="JobDescriptionEntry" Placeholder="Enter Job Description" BackgroundColor="White" HeightRequest="100" TextColor="Black"/>
+                </Frame>
 
-                <Label Grid.Column="0" Text="Time Period:" FontAttributes="Bold"/>
-                <Picker Grid.Column="1" x:Name="TimePeriodPicker" Title="Select Time Period">
-                    <Picker.Items>
-                        <x:String>Per Hour</x:String>
-                        <x:String>Per Day</x:String>
-                        <x:String>Per Project</x:String>
-                        <x:String>Others</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Entry Grid.Column="1" x:Name="OtherTimePeriodEntry" Placeholder="Enter Time Period" BackgroundColor="White" IsVisible="False"/>
-            </Grid>
+                <!-- Action Buttons -->
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="Publish" BackgroundColor="Green" TextColor="White" Clicked="OnPublishClicked" />
+                    <Button Text="Cancel" BackgroundColor="DarkRed" TextColor="White" Clicked="OnPublishClicked"/>
+                </HorizontalStackLayout>
 
-            <!-- Skillset -->
-            <Label Text="Skillset Required:" FontAttributes="Bold"/>
-            <Picker x:Name="SkillsetPicker" Title="Select Skillset">
-                <Picker.Items>
-                    <x:String>Carpentry</x:String>
-                    <x:String>Plumbing</x:String>
-                    <x:String>Electrical</x:String>
-                    <x:String>Cleaning</x:String>
-                    <x:String>Painting</x:String>
-                    <x:String>Others</x:String>
-                </Picker.Items>
-            </Picker>
-            <Entry x:Name="OtherSkillsetEntry" Placeholder="Enter Skillset" BackgroundColor="White" IsVisible="False"/>
+                <!-- Edit and Attach Buttons -->
+                <HorizontalStackLayout HorizontalOptions="End" Spacing="10">
+                    <Image Source="editicon.png" WidthRequest="25" HeightRequest="25"/>
+                    <Image Source="attachicon.png" WidthRequest="25" HeightRequest="25"/>
+                </HorizontalStackLayout>
 
-            <!-- Location -->
-            <Label Text="Location:" FontAttributes="Bold"/>
-            <Entry x:Name="LocationEntry" Placeholder="Enter Location" BackgroundColor="White"/>
-
-            <!-- Job Description -->
-            <Label Text="Job Description:" FontAttributes="Bold"/>
-            <Editor x:Name="JobDescriptionEditor" Placeholder="Enter job details here..." AutoSize="TextChanges" BackgroundColor="White"/>
-
-            <!-- Action Buttons -->
-            <HorizontalStackLayout Spacing="10">
-                <Button Text="Publish" BackgroundColor="Green" TextColor="White" />
-                <Button Text="Cancel" BackgroundColor="DarkRed" TextColor="White"/>
-            </HorizontalStackLayout>
-
-            <!-- Edit and Attach Buttons -->
-            <HorizontalStackLayout HorizontalOptions="End" Spacing="10">
-                <Image Source="edit_icon.png" WidthRequest="25" HeightRequest="25"/>
-                <Image Source="attach_icon.png" WidthRequest="25" HeightRequest="25"/>
-            </HorizontalStackLayout>
-
-        </VerticalStackLayout>
-    </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

@@ -1,0 +1,83 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="San.HomePageCustomer"
+             BackgroundColor="White"
+             Title="Customer Dashboard">
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header Section (Customer Info and Job Request Button) -->
+        <HorizontalStackLayout Grid.Row="0" Spacing="20" Padding="10" BackgroundColor="DeepSkyBlue" VerticalOptions="Center">
+            <!-- Create Job Request Button -->
+            <Button Text="Create Job Request" BackgroundColor="#4CAF50" TextColor="White" WidthRequest="200" HeightRequest="50" CornerRadius="25" FontSize="Medium" VerticalOptions="Center" />
+
+            <!-- Customer Name and Profile -->
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                <!-- Customer Name -->
+                <Label Text="NAME OF THE CUSTOMER" FontSize="Large" FontAttributes="Bold" TextColor="White" />
+
+                <!-- Profile Image -->
+                <Frame CornerRadius="37.5" Padding="0" HasShadow="True" WidthRequest="75" HeightRequest="75" BackgroundColor="Transparent" VerticalOptions="Center">
+                    <Image Source="workerprofile.png" WidthRequest="75" HeightRequest="75" Aspect="AspectFill"/>
+                </Frame>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <!-- Main Content Section (Current Job Request, Previous Jobs, Workers that Applied) -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="15" Spacing="20">
+
+                <!-- First Row (Current Job Request & Divider) -->
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <!-- Current Job Request Section -->
+                    <Label Text="Current Job Request:" FontAttributes="Bold" VerticalOptions="Center" TextColor="#333333" />
+                    <Label Text="{Binding CurrentJobRequest}" VerticalOptions="Center" TextColor="Gray" FontSize="Medium" />
+                </HorizontalStackLayout>
+
+                <!-- Divider Line -->
+                <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,15"/>
+
+                <!-- Second Row (Jobs Created Previously) -->
+                <Label Text="Jobs Created Previously:" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center" TextColor="#333333" />
+
+                <StackLayout Padding="10" Spacing="15">
+                    <!-- Example of a previous job -->
+                    <Frame BorderColor="LightGray" BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="15">
+                        <VerticalStackLayout>
+                            <Label Text="Job Title: Carpentry" FontAttributes="Bold" FontSize="Medium" />
+                            <Label Text="Job Description: Detailed description here." FontSize="Small" TextColor="Gray"/>
+                            <Label Text="Status: In Progress" FontSize="Small" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                    <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+                </StackLayout>
+
+                <!-- Divider Line -->
+                <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,15"/>
+
+                <!-- Third Row (Workers that Applied) -->
+                <Label Text="Workers that Applied:" FontAttributes="Bold" FontSize="Medium" TextColor="#333333" />
+
+                <StackLayout Padding="10" Spacing="15">
+                    <!-- Example of an applicant -->
+                    <Frame BorderColor="LightGray" BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="15">
+                        <VerticalStackLayout>
+                            <Label Text="Juan Dela Cruz - Carpentry" FontAttributes="Bold" FontSize="Medium"/>
+                            <Label Text="Status: Applied" FontSize="Small" TextColor="Gray"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                    <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+                </StackLayout>
+
+                <!-- Add more previous jobs and workers as needed -->
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+    <!-- Toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Profile" Order="Primary" Priority="0" />
+        <ToolbarItem Text="Settings" Order="Secondary" Priority="1" />
+    </ContentPage.ToolbarItems>
+
+</ContentPage>

@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="San.SignupPage">
 
-    <VerticalStackLayout Padding="20" Spacing="5">
+    <VerticalStackLayout Padding="10" Spacing="5" BackgroundColor="White">
         <StackLayout HorizontalOptions="Center" 
                      VerticalOptions="Start" 
-                     Margin="0,20,0,30">
+                     Margin="0,0,0,10"
+                     BackgroundColor="White">
 
             <Label Text="Industrial Trade Jobs" 
                    TextColor="Blue" 
@@ -28,6 +29,8 @@
             <VerticalStackLayout 
                 Grid.Column="0" 
                 Spacing="12">
+
+                <!-- Title -->
                 <VerticalStackLayout>
                     <Label Text="Create your account!" 
                            FontSize="Medium" 
@@ -38,53 +41,117 @@
                            Padding="215,2,0,5"/>
                 </VerticalStackLayout>
 
+                <!-- Email -->
                 <VerticalStackLayout>
                     <Label Text="Email"  
                            FontSize="Small" 
                            FontAttributes="Bold"
-                            Padding="215,2,0,5"/>
-                    <Entry x:Name="emailEntry" 
-                           Keyboard="Email" 
-                           HeightRequest="40"
-                           WidthRequest="500"
-                          />
+                           Padding="215,2,0,5"
+                           TextColor="Black"/>
+                    <Frame BorderColor="Black"
+                           CornerRadius="8"
+                           Padding="5"
+                           HasShadow="False"
+                           HeightRequest="50"
+                           WidthRequest="310"
+                           BackgroundColor="Transparent">
+                        <Entry x:Name="emailEntry" 
+                               Keyboard="Email" 
+                               Placeholder="asdf@hotmail.com"
+                               TextColor="Black"
+                               BackgroundColor="Transparent"
+                               />
+                    </Frame>
                 </VerticalStackLayout>
 
+                <!-- First Name -->
                 <VerticalStackLayout>
                     <Label Text="First Name" 
                            FontSize="Small" 
-                           FontAttributes="Bold"  Padding="215,2,0,5"/>
-                    <Entry x:Name="firstNameEntry" 
-                           HeightRequest="40"  WidthRequest="500"/>
+                           TextColor="Black"
+                           FontAttributes="Bold"  
+                           Padding="215,2,0,5"/>
+                    <Frame BorderColor="Black"
+                           CornerRadius="8"
+                           Padding="5"
+                           HasShadow="False"
+                           HeightRequest="50"
+                           WidthRequest="310"
+                           BackgroundColor="Transparent">
+                        <Entry x:Name="firstNameEntry" 
+                               Placeholder="Enter first name"
+                               TextColor="Black"
+                               BackgroundColor="Transparent"/>
+                    </Frame>
                 </VerticalStackLayout>
 
+                <!-- Last Name -->
                 <VerticalStackLayout>
                     <Label Text="Last Name" 
                            FontSize="Small" 
-                           FontAttributes="Bold" Padding="215,2,0,5" />
-                    <Entry x:Name="lastNameEntry" 
-                           HeightRequest="40"  WidthRequest="500"/>
+                           TextColor="Black"
+                           FontAttributes="Bold" 
+                           Padding="215,2,0,5" />
+                    <Frame BorderColor="Black"
+                           CornerRadius="8"
+                           Padding="5"
+                           HasShadow="False"
+                           HeightRequest="50"
+                           WidthRequest="310"
+                           BackgroundColor="Transparent">
+                        <Entry x:Name="lastNameEntry" 
+                               Placeholder="Enter last name"
+                               TextColor="Black"
+                               BackgroundColor="Transparent"/>
+                    </Frame>
                 </VerticalStackLayout>
 
+                <!-- Password -->
                 <VerticalStackLayout>
                     <Label Text="Password" 
                            FontSize="Small" 
-                           FontAttributes="Bold"  Padding="215,2,0,5" />
-                    <Entry x:Name="passwordEntry" 
-                           IsPassword="True" 
-                           HeightRequest="40"  WidthRequest="500"/>
+                           TextColor="Black"
+                           FontAttributes="Bold"  
+                           Padding="215,2,0,5" />
+                    <Frame BorderColor="Black"
+                           CornerRadius="8"
+                           Padding="5"
+                           HasShadow="False"
+                           HeightRequest="50"
+                           WidthRequest="310"
+                           BackgroundColor="Transparent">
+                        <Entry x:Name="passwordEntry" 
+                               IsPassword="True"
+                               Placeholder="Enter password"
+                               TextColor="Black"
+                               BackgroundColor="Transparent"/>
+                    </Frame>
                 </VerticalStackLayout>
 
+                <!-- Confirm Password -->
                 <VerticalStackLayout>
                     <Label Text="Confirm Password" 
                            FontSize="Small" 
-                           FontAttributes="Bold"  Padding="215,2,0,5"/>
-                    <Entry x:Name="confirmPasswordEntry" 
-                           IsPassword="True" 
-                           HeightRequest="40"  WidthRequest="500"/>
+                           TextColor="Black"
+                           FontAttributes="Bold"  
+                           Padding="215,2,0,5"/>
+                    <Frame BorderColor="Black"
+                           CornerRadius="8"
+                           Padding="5"
+                           HasShadow="False"
+                           HeightRequest="50"
+                           WidthRequest="310"
+                           BackgroundColor="Transparent">
+                        <Entry x:Name="confirmPasswordEntry" 
+                               IsPassword="True"
+                               Placeholder="Confirm password"
+                               TextColor="Black"
+                               BackgroundColor="Transparent"/>
+                    </Frame>
                 </VerticalStackLayout>
             </VerticalStackLayout>
 
+            <!-- Right Panel -->
             <VerticalStackLayout Grid.Column="1" 
                                  HorizontalOptions="Center" 
                                  VerticalOptions="Center" 
@@ -95,11 +162,6 @@
                        HorizontalOptions="Center" 
                        Aspect="AspectFill" />
 
-                <Image Source="signuplogo.png" 
-                       HeightRequest="250" 
-                       WidthRequest="250" 
-                       HorizontalOptions="Center" />
-
                 <Button Text="Sign Up" 
                         Clicked="OnSignupClicked"
                         BackgroundColor="Blue" 
@@ -108,18 +170,35 @@
                         WidthRequest="250" 
                         CornerRadius="10" />
 
-                <Label Text="By clicking continue, you agree to our Terms of Service and Privacy Policy" 
+                <Label Text="By clicking continue, you agree to our Terms of Service " 
+                       FontSize="Small" 
+                       FontAttributes="Italic" 
+                       HorizontalTextAlignment="Center" />
+                <Label Text="and Privacy Policy" 
                        FontSize="Small" 
                        FontAttributes="Italic" 
                        HorizontalTextAlignment="Center" />
             </VerticalStackLayout>
         </Grid>
 
-        <!-- Custom Error/Succes Alert View -->
-        <Frame x:Name="AlertFrame" IsVisible="False" BackgroundColor="White" Padding="20" CornerRadius="10" HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- Alert -->
+        <Frame x:Name="AlertFrame" 
+               IsVisible="False" 
+               BackgroundColor="White" 
+               Padding="20" 
+               CornerRadius="10" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center">
             <StackLayout Spacing="10">
-                <Label x:Name="AlertMessageLabel" TextColor="Black" FontSize="Medium" HorizontalOptions="Center"/>
-                <Button Text="OK" Clicked="OnAlertOkClicked" BackgroundColor="Blue" TextColor="White" HorizontalOptions="Center"/>
+                <Label x:Name="AlertMessageLabel" 
+                       TextColor="Black" 
+                       FontSize="Medium" 
+                       HorizontalOptions="Center"/>
+                <Button Text="OK" 
+                        Clicked="OnAlertOkClicked" 
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        HorizontalOptions="Center"/>
             </StackLayout>
         </Frame>
 
